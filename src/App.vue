@@ -1,28 +1,38 @@
+// Parte "HTML" dove posso "iniettare i miei componenti utilizzando "<component/>"
+
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Title/>
+    <Jumbotron/>
+    
   </div>
 </template>
 
+// Parte Js dove importo i components.vue 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Title from './components/Title.vue'
+import Jumbotron from './components/Jumbotron.vue'
+
+// qui esporto i componenti caricati in precedenza e li collego con id="app"
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld
+    Title,
+    Jumbotron
   }
 }
 </script>
 
+parte CSS principale, le altri parti CSS vengono eseguite nei singoli componenti
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+  }
+
+
 </style>
